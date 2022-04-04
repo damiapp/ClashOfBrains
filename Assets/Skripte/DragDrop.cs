@@ -32,8 +32,9 @@ public class DragDrop : MonoBehaviour
      public void EndDrag()
     {
         isDragging = false;
+        //promeniBroj();
+    }
+    //public void  promeniBroj(){
 
-     }
-
-
+    //}
 }
