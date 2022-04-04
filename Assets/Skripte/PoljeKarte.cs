@@ -3,10 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
+using Random = UnityEngine.Random;
+
 
 public class PoljeKarte : MonoBehaviour
 {
-    public List<Card> deck = new List<Card>();
+    public List<Karta> deck = new List<Karta>();
     public Transform[] cardSlots;
     public bool[] avaibleCardSlots;
 
@@ -16,14 +19,14 @@ public class PoljeKarte : MonoBehaviour
     public void DrawCard(){
 
         if(deck.Count >=1){
-            Card randCrd = deck[Random.Range(0, deck.Count)];
+            Karta randCard = deck[Random.Range(0, deck.Count)];
 
-            for(int i =0; i < availableCardSlots.Length; i++)
+            for(int i =0; i < avaibleCardSlots.Length; i++)
            {
-                if(availableCardSlots[i] == true){
+                if(avaibleCardSlots[i] == true){
                     randCard.gameObject.SetActive(true);
                     randCard.transform.position = cardSlots[i].position;
-                    availableCardSlots[i] = false;
+                    avaibleCardSlots[i] = false;
                     deck.Remove(randCard);
                 return;
                 }
