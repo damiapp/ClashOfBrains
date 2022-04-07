@@ -5,7 +5,9 @@ using UnityEngine;
 public class DragDrop : MonoBehaviour
 {
     private bool isDragging = false;
-   private Vector2 startPosition;
+    private bool isOverDropZone;
+    private GameObject dropZone;
+    private Vector2 startPosition;
 
      void Update()
     {
@@ -19,10 +21,19 @@ public class DragDrop : MonoBehaviour
 
 
     }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        isOverDropZone = true;
+        dropZone = collision.gameObject;
+     }
 
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        isOverDropZone = false;
+        dropZone = null;
+    }
 
-
-    public void StartDrag()
+        public void StartDrag()
     {
         startPosition = transform.position;
         isDragging = true;
@@ -32,9 +43,20 @@ public class DragDrop : MonoBehaviour
      public void EndDrag()
     {
         isDragging = false;
-        //promeniBroj();
+        if (isOverDropZone)
+        {
+            transform.SetParent(dropZone.transform, false); //setParent omogucava transformaciji koja ce da se desi u unity da zadrzi svoju orijentaciju.
+        }
+           else
+        {
+
+            transform.position = startPosition;
+
+
+
+        }
     }
     //public void  promeniBroj(){
-
+    //promeniBroj();
     //}
 }
