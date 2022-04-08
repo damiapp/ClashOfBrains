@@ -9,7 +9,7 @@ public class DragDrop : MonoBehaviour
     private GameObject dropZone;
     private Vector2 startPosition;
 
-     void Update()
+    void Update()
     {
         if (isDragging)
         {
@@ -18,14 +18,15 @@ public class DragDrop : MonoBehaviour
 
         }
 
-
-
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        isOverDropZone = true;
-        dropZone = collision.gameObject;
-     }
+        if(collision.gameObject.tag=="DropZona"){
+            isOverDropZone = true;
+            dropZone = collision.gameObject;
+        }
+        
+    }
 
     private void OnCollisionExit2D(Collision2D collision)
     {
@@ -33,27 +34,22 @@ public class DragDrop : MonoBehaviour
         dropZone = null;
     }
 
-        public void StartDrag()
+    public void StartDrag()
     {
         startPosition = transform.position;
         isDragging = true;
-
     }
  
-     public void EndDrag()
+    public void EndDrag()
     {
         isDragging = false;
         if (isOverDropZone)
         {
             transform.SetParent(dropZone.transform, false); //setParent omogucava transformaciji koja ce da se desi u unity da zadrzi svoju orijentaciju.
         }
-           else
+        else
         {
-
             transform.position = startPosition;
-
-
-
         }
     }
     //public void  promeniBroj(){

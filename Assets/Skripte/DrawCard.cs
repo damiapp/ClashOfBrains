@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class DrawCard : MonoBehaviour
 {
-   public GameObject Card1;
-   public GameObject Card2;
+    public GameObject Card1;
+    public GameObject Card2;
     public GameObject PlayerArea;
     public GameObject EnemyArea;
    
@@ -15,7 +15,6 @@ public class DrawCard : MonoBehaviour
     {
         cards.Add(Card1);
         cards.Add(Card2);
-
     }
      
     public void OnClick()
@@ -29,10 +28,6 @@ public class DrawCard : MonoBehaviour
             enemyCard.transform.SetParent(EnemyArea.transform, false);
 
         }
-        
-
-
-
     }
   
 }
