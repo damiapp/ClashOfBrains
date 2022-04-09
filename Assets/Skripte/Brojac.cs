@@ -19,14 +19,20 @@ public class Brojac : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-        int karte1 = DropZone1.transform.childCount;
-        int karte2 = DropZone2.transform.childCount;
-        //for (int i = 0; i < karte1; ++i){
-        // pa sad funkcija za sabranje ITD...   
-        //}
-        Poeni1.text="1: "+karte1.ToString();
-        
-        Poeni2.text="2: "+karte2.ToString();
+    {        
+        Sabiranje(DropZone1,Poeni1,1);
+        Sabiranje(DropZone2,Poeni2,2);
+    }
+
+    void Sabiranje(GameObject DropZone, TextMeshProUGUI Poeni,int igrac){      
+        int karte = DropZone.transform.childCount;
+
+        int brojac=0;
+        for (int i = 0; i < karte; i++){
+            GameObject cardObject=DropZone.transform.GetChild(i).gameObject;
+            GameObject textObject=cardObject.transform.GetChild(0).gameObject;
+            brojac = brojac + int.Parse(textObject.GetComponent<TextMeshProUGUI>().text);
+        }
+        Poeni.text=igrac.ToString()+": "+brojac.ToString();
     }
 }
