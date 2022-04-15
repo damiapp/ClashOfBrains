@@ -4,26 +4,28 @@ using UnityEngine;
 
 public class DragDrop : MonoBehaviour
 {
+    private bool draggable = true;
     private bool isDragging = false;
     private bool isOverDropZone;
-    private GameObject dropZone;
+    private DropZone dropZone;
     private Vector2 startPosition;
 
     void Update()
     {
         if (isDragging)
         {
-
             transform.position = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
-
         }
 
     }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag=="DropZona"){
+        var dropZoneComponent = collision.gameObject.GetComponent<DropZone>();
+
+        if (dropZoneComponent != null) {
             isOverDropZone = true;
-            dropZone = collision.gameObject;
+            dropZone = dropZoneComponent;
         }
         
     }
@@ -36,16 +38,28 @@ public class DragDrop : MonoBehaviour
 
     public void StartDrag()
     {
+        if (!draggable) {
+            return;
+        }
+
         startPosition = transform.position;
         isDragging = true;
     }
  
     public void EndDrag()
     {
+        if (!isDragging) {
+            return;
+        }
+
         isDragging = false;
         if (isOverDropZone)
         {
+            draggable = false;
+
             transform.SetParent(dropZone.transform, false); //setParent omogucava transformaciji koja ce da se desi u unity da zadrzi svoju orijentaciju.
+            var gameManager = FindObjectOfType<GameManager>();
+            transform.GetComponent<AbstractCard>().Apply(gameManager, dropZone.BelongingToPlayer);
         }
         else
         {

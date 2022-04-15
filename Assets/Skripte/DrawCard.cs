@@ -25,16 +25,22 @@ public class DrawCard : MonoBehaviour
             int broj1 = Random.Range(1, 22);
             int broj2 = Random.Range(1, 22);
 
-            GameObject playerCard = Instantiate(cards[Random.Range(0, cards.Count)], new Vector3(0, 286, 0), Quaternion.identity);
-            playerCard.transform.SetParent(PlayerArea.transform, false);
+            GameObject playerCardObject = Instantiate(cards[Random.Range(0, cards.Count)], new Vector3(0, 286, 0), Quaternion.identity);
+            playerCardObject.transform.SetParent(PlayerArea.transform, false);
 
-            GameObject textObject=playerCard.transform.GetChild(0).gameObject;
+            var playerAdditionCard = playerCardObject.AddComponent<AdditionCard>();
+            playerAdditionCard.SetValue(broj1);
+
+            GameObject textObject=playerCardObject.transform.GetChild(0).gameObject;
             textObject.GetComponent<TextMeshProUGUI>().text = broj1.ToString();
 
-            GameObject enemyCard = Instantiate(cards[Random.Range(0, cards.Count)], new Vector3(0, 286, 0), Quaternion.identity);
-            enemyCard.transform.SetParent(EnemyArea.transform, false);
-            
-            GameObject textObject1=enemyCard.transform.GetChild(0).gameObject;
+            GameObject enemyCardObject = Instantiate(cards[Random.Range(0, cards.Count)], new Vector3(0, 286, 0), Quaternion.identity);
+            enemyCardObject.transform.SetParent(EnemyArea.transform, false);
+
+            var enemyAdditionCard = enemyCardObject.AddComponent<AdditionCard>();
+            enemyAdditionCard.SetValue(broj2);
+
+            GameObject textObject1=enemyCardObject.transform.GetChild(0).gameObject;
             textObject1.GetComponent<TextMeshProUGUI>().text = broj2.ToString();
         }
     }

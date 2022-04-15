@@ -1,30 +1,42 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
-    public List<Karta> deck = new List<Karta>();
+    public List<AbstractCard> deck = new List<AbstractCard>();
     public Transform[] cardSlots;
-    public bool[] avaibleCardSlots;
-    public Text deckSizeText;
+    public bool[] availableCardSlots;
+    public TMP_Text deckSizeText;
 
+    public Player player1;
+    public Player player2;
+
+    public DropZone dropZonePlayer1;
+    public DropZone dropZonePlayer2;
+
+    private void Start () {
+        player1 = new Player("Njutn");
+        player2 = new Player("Lajbnic");
+
+        dropZonePlayer1.BelongingToPlayer = player1;
+        dropZonePlayer2.BelongingToPlayer = player2;
+    }
 
     public void DrawCard()
     {
-
         if (deck.Count >= 1)
         {
-            Karta randCard = deck[Random.Range(0, deck.Count)];
+            AbstractCard randCard = deck[Random.Range(0, deck.Count)];
 
-            for (int i = 0; i < avaibleCardSlots.Length; i++)
+            for (int i = 0; i < availableCardSlots.Length; i++)
             {
-                if (avaibleCardSlots[i] == true)
+                if (availableCardSlots[i] == true)
                 {
                     randCard.gameObject.SetActive(true);
                     randCard.transform.position = cardSlots[i].position;
-                    avaibleCardSlots[i] = false;
+                    availableCardSlots[i] = false;
                     deck.Remove(randCard);
                     return;
                 }
@@ -34,7 +46,7 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        deckSizeText.text = deck.Count.ToString();
+        deckSizeText.text = $"Remaining cards: {deck.Count}";
     }
 
 }
