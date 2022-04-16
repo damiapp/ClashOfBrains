@@ -16,6 +16,10 @@ public class GameManager : MonoBehaviour
     public DropZone dropZonePlayer1;
     public DropZone dropZonePlayer2;
 
+    public DropZone dropZonePlayer11;
+
+    public DropZone dropZonePlayer22;
+
     public GameObject player1Area;
     public GameObject player2Area;
 
@@ -27,6 +31,8 @@ public class GameManager : MonoBehaviour
 
         dropZonePlayer1.BelongingToPlayer = player1;
         dropZonePlayer2.BelongingToPlayer = player2;
+        dropZonePlayer11.BelongingToPlayer = player1;    
+        dropZonePlayer22.BelongingToPlayer = player2;
 
         for(int i=0;i<50;i++){
             AdditionCard card=new AdditionCard();
