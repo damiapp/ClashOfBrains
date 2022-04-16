@@ -149,6 +149,7 @@ GameObject:
   - component: {fileID: 6827569773987174660}
   - component: {fileID: -1494248309732991940}
   - component: {fileID: -2786673733654525011}
+  - component: {fileID: 7234304879594906749}
   m_Layer: 5
   m_Name: Crad1
   m_TagString: Card
@@ -318,3 +319,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 7
+--- !u!114 &7234304879594906749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9194379563098590767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 557bafe16acfabb49a2087ef796ef13b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameText: {fileID: 0}
+  descriptionText: {fileID: 4674873575014097840}
+  valueText: {fileID: 0}

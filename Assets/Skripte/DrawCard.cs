@@ -31,17 +31,17 @@ public class DrawCard : MonoBehaviour
             var playerAdditionCard = playerCardObject.AddComponent<AdditionCard>();
             playerAdditionCard.SetValue(broj1);
 
-            GameObject textObject=playerCardObject.transform.GetChild(0).gameObject;
-            textObject.GetComponent<TextMeshProUGUI>().text = broj1.ToString();
+            var playerCardView = playerCardObject.GetComponent<CardView>();
+            playerCardView.SetCard(playerAdditionCard);
 
             GameObject enemyCardObject = Instantiate(cards[Random.Range(0, cards.Count)], new Vector3(0, 286, 0), Quaternion.identity);
             enemyCardObject.transform.SetParent(EnemyArea.transform, false);
 
-            var enemyAdditionCard = enemyCardObject.AddComponent<AdditionCard>();
+            var enemyAdditionCard = enemyCardObject.AddComponent<SubsractionCard>();
             enemyAdditionCard.SetValue(broj2);
 
-            GameObject textObject1=enemyCardObject.transform.GetChild(0).gameObject;
-            textObject1.GetComponent<TextMeshProUGUI>().text = broj2.ToString();
+            var enemyCardView = enemyCardObject.GetComponent<CardView>();
+            enemyCardView.SetCard(enemyAdditionCard);
         }
     }
   
