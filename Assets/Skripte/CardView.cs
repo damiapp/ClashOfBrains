@@ -10,6 +10,10 @@ public class CardView : MonoBehaviour
 
     private AbstractCard card;
 
+    public AbstractCard GetCard() {
+        return card;
+    }
+
     public void SetCard (AbstractCard newCard) {
         card = newCard;
 

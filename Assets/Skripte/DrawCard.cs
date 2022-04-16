@@ -28,7 +28,7 @@ public class DrawCard : MonoBehaviour
             GameObject playerCardObject = Instantiate(cards[Random.Range(0, cards.Count)], new Vector3(0, 286, 0), Quaternion.identity);
             playerCardObject.transform.SetParent(PlayerArea.transform, false);
 
-            var playerAdditionCard = playerCardObject.AddComponent<AdditionCard>();
+            var playerAdditionCard = new AdditionCard();
             playerAdditionCard.SetValue(broj1);
 
             var playerCardView = playerCardObject.GetComponent<CardView>();
@@ -37,7 +37,7 @@ public class DrawCard : MonoBehaviour
             GameObject enemyCardObject = Instantiate(cards[Random.Range(0, cards.Count)], new Vector3(0, 286, 0), Quaternion.identity);
             enemyCardObject.transform.SetParent(EnemyArea.transform, false);
 
-            var enemyAdditionCard = enemyCardObject.AddComponent<SubsractionCard>();
+            var enemyAdditionCard = new SubsractionCard();
             enemyAdditionCard.SetValue(broj2);
 
             var enemyCardView = enemyCardObject.GetComponent<CardView>();

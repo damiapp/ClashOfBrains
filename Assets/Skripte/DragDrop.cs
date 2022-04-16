@@ -59,7 +59,7 @@ public class DragDrop : MonoBehaviour
 
             transform.SetParent(dropZone.transform, false); //setParent omogucava transformaciji koja ce da se desi u unity da zadrzi svoju orijentaciju.
             var gameManager = FindObjectOfType<GameManager>();
-            transform.GetComponent<AbstractCard>().Apply(gameManager, dropZone.BelongingToPlayer);
+            transform.GetComponent<CardView>().GetCard().Apply(gameManager, dropZone.BelongingToPlayer);
         }
         else
         {

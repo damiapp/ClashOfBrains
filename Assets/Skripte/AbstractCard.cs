@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public abstract class AbstractCard : MonoBehaviour, ICard {
+public abstract class AbstractCard : ICard {
 
     public string Name { get; set; }
     public string Description { get; set; }

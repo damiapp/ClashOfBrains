@@ -16,12 +16,32 @@ public class GameManager : MonoBehaviour
     public DropZone dropZonePlayer1;
     public DropZone dropZonePlayer2;
 
+    public GameObject player1Area;
+    public GameObject player2Area;
+
+    public GameObject cardPrefab;
+
     private void Start () {
-        player1 = new Player("Njutn");
-        player2 = new Player("Lajbnic");
+        player1 = new Player("Njutn", player1Area);
+        player2 = new Player("Lajbnic", player2Area);
 
         dropZonePlayer1.BelongingToPlayer = player1;
         dropZonePlayer2.BelongingToPlayer = player2;
+
+        for(int i=0;i<50;i++){
+            AdditionCard card=new AdditionCard();
+            card.SetValue(Random.Range(1, 22));
+            deck.Add(card);
+        }
+        for(int i=0;i<50;i++){
+            SubsractionCard card=new SubsractionCard();
+            card.SetValue(Random.Range(1, 22));
+            deck.Add(card);
+        }
+
+        for (int i = 0; i < 5; i++) {
+            DrawCard();
+        }
     }
 
     public void DrawCard()
@@ -29,18 +49,12 @@ public class GameManager : MonoBehaviour
         if (deck.Count >= 1)
         {
             AbstractCard randCard = deck[Random.Range(0, deck.Count)];
+            player1.AddCard(randCard, cardPrefab);
+            deck.Remove(randCard);
 
-            for (int i = 0; i < availableCardSlots.Length; i++)
-            {
-                if (availableCardSlots[i] == true)
-                {
-                    randCard.gameObject.SetActive(true);
-                    randCard.transform.position = cardSlots[i].position;
-                    availableCardSlots[i] = false;
-                    deck.Remove(randCard);
-                    return;
-                }
-            }
+            randCard = deck[Random.Range(0, deck.Count)];
+            player2.AddCard(randCard, cardPrefab);
+            deck.Remove(randCard);
         }
     }
 
