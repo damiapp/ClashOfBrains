@@ -45,6 +45,20 @@ public class GameManager : MonoBehaviour
             deck.Add(card);
         }
 
+        for (int i = 0; i < 50; i++)
+        {
+            MnozenjeCard card = new MnozenjeCard();
+            card.SetValue(Random.Range(1, 22));
+            deck.Add(card);
+        }
+
+        for (int i = 0; i < 50; i++)
+        {
+            DeljenjeCrad card = new DeljenjeCrad();
+            card.SetValue(Random.Range(1, 22));
+            deck.Add(card);
+        }
+
         for (int i = 0; i < 5; i++) {
             DrawCard();
         }

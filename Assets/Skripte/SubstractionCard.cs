@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SubsractionCard : AbstractCard {
 
-    public int value = 1;
+    public float value = 1;
 
     public override void Apply (GameManager manager, Player player) {
         player.Lifepoints -= value;
