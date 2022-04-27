@@ -59,6 +59,13 @@ public class GameManager : MonoBehaviour
             deck.Add(card);
         }
 
+        for (int i = 0; i < 50; i++)
+        {
+            SquareRootCard card = new SquareRootCard();
+            card.SetValue(1);
+            deck.Add(card);
+        }
+
         for (int i = 0; i < 5; i++) {
             DrawCard();
         }

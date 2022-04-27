@@ -5,7 +5,7 @@ using UnityEngine;
 public class Player
 {
     public string PlayerName { get; }
-    public float Lifepoints { get; set; } = 0;
+    public double Lifepoints { get; set; } = 0;
     private List<AbstractCard> cards = new List<AbstractCard>();
 
     private GameObject PlayerZone;

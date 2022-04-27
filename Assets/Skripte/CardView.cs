@@ -11,6 +11,7 @@ public class CardView : MonoBehaviour
 
     public Sprite plus;
     public Sprite puta;
+    public Sprite funkcija;
     private AbstractCard card;
 
     public AbstractCard GetCard() {
@@ -34,6 +35,8 @@ public class CardView : MonoBehaviour
             gameObject.GetComponent<Image>().sprite=plus;
         if(card.Operation=="*")
             gameObject.GetComponent<Image>().sprite=puta;
+        if(card.Operation=="f")
+            gameObject.GetComponent<Image>().sprite=funkcija;
         
     }
 }
