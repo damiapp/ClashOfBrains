@@ -17,5 +17,7 @@ public class MnozenjeCard : AbstractCard
         value = newValue;
 
         Description = $"*{value}";
+    
+        Operation="*";
     }
 }

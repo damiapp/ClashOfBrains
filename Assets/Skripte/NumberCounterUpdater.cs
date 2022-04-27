@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class NumberCounterUpdater : MonoBehaviour
 {
-    public NumberCounter NumberCounter;
+    public NumberCounter numberCounter;
     public TMP_InputField InputField;
 
     public void SetValue()
@@ -12,7 +12,7 @@ public class NumberCounterUpdater : MonoBehaviour
 
         if (int.TryParse(InputField.text, out value))
         {
-            NumberCounter.Value = value;
+            numberCounter.Value = value;
         }
     }
 }

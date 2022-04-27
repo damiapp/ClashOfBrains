@@ -14,5 +14,7 @@ public class SubsractionCard : AbstractCard {
         value = newValue;
         
         Description = $"-{value}";
+        
+        Operation="+";
     }
 }

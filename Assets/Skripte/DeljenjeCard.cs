@@ -17,5 +17,6 @@ public class DeljenjeCrad : AbstractCard
         value = newValue;
 
         Description = $"/{value}";
+        Operation="*";
     }
 }

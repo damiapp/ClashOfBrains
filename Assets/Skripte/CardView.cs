@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class CardView : MonoBehaviour
@@ -8,6 +9,8 @@ public class CardView : MonoBehaviour
     public TMP_Text nameText;
     public TMP_Text descriptionText;
 
+    public Sprite plus;
+    public Sprite puta;
     private AbstractCard card;
 
     public AbstractCard GetCard() {
@@ -27,5 +30,10 @@ public class CardView : MonoBehaviour
         if (descriptionText != null) {
             descriptionText.text = card.Description;
         }
+        if(card.Operation=="+")
+            gameObject.GetComponent<Image>().sprite=plus;
+        if(card.Operation=="*")
+            gameObject.GetComponent<Image>().sprite=puta;
+        
     }
 }

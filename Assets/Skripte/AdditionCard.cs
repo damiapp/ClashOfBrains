@@ -14,5 +14,7 @@ public class AdditionCard : AbstractCard {
         value = newValue;
 
         Description = $"+{value}";
+
+        Operation="+";
     }
 }
