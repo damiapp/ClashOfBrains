@@ -67,6 +67,12 @@ public class GameManager : MonoBehaviour
             card.SetValue(1);
             deck.Add(card);
         }
+         for (int i = 0; i < 50; i++)
+        {
+            Swap card = new Swap();
+            card.SetValue(1);
+            deck.Add(card);
+        }
 
         for (int i = 0; i < 5; i++)
         {

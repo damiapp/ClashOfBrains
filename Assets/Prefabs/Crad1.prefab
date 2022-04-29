@@ -150,6 +150,7 @@ GameObject:
   - component: {fileID: -1494248309732991940}
   - component: {fileID: -2786673733654525011}
   - component: {fileID: 7234304879594906749}
+  - component: {fileID: 4957730262928559647}
   m_Layer: 5
   m_Name: Crad1
   m_TagString: Card
@@ -175,7 +176,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 302, y: 2.11e-10}
-  m_SizeDelta: {x: 100, y: 130}
+  m_SizeDelta: {x: 150, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1045530608074728517
 CanvasRenderer:
@@ -296,7 +297,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 100, y: 130}
+  m_Size: {x: 150, y: 200}
   m_EdgeRadius: 0
 --- !u!50 &-2786673733654525011
 Rigidbody2D:
@@ -336,3 +337,16 @@ MonoBehaviour:
   plus: {fileID: 21300000, guid: d1cfdc99ca2d66645bebd2825f705df6, type: 3}
   puta: {fileID: 21300000, guid: 030bd950324523942b3b889e6f59e1ae, type: 3}
   funkcija: {fileID: 21300000, guid: 4d35b3b7ad477e646b990448a9adeb40, type: 3}
+  zamena: {fileID: 21300000, guid: 63f7f7cba4d2507458d48840b08b90ec, type: 3}
+--- !u!114 &4957730262928559647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9194379563098590767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3072fcf7c00e4e45932c4a0f85b1816, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
