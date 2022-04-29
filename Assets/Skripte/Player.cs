@@ -6,6 +6,7 @@ public class Player
 {
     public string PlayerName { get; }
     public double Lifepoints { get; set; } = 0;
+    public bool onTurn=false;
     private List<AbstractCard> cards = new List<AbstractCard>();
 
     private GameObject PlayerZone;

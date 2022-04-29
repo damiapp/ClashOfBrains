@@ -47,56 +47,56 @@ public class GameManager : MonoBehaviour
             deck.Add(card);
         }
 
-        for (int i = 0; i < 50; i++)
+        for (int i = 0; i < 25; i++)
         {
             MnozenjeCard card = new MnozenjeCard();
             card.SetValue(Random.Range(1, 22));
             deck.Add(card);
         }
 
-        for (int i = 0; i < 50; i++)
+        for (int i = 0; i < 25; i++)
         {
             DeljenjeCrad card = new DeljenjeCrad();
             card.SetValue(Random.Range(1, 22));
             deck.Add(card);
         }
 
-        for (int i = 0; i < 10; i++)
+        for (int i = 0; i < 5; i++)
         {
             SquareRootCard card = new SquareRootCard();
             card.SetValue(1);
             deck.Add(card);
         }
 
-        for (int i = 0; i < 10; i++)
+        for (int i = 0; i < 5; i++)
         {
             SinusCard card = new SinusCard ();
             card.SetValue(1);
             deck.Add(card);
         }
 
-        for (int i = 0; i < 10; i++)
+        for (int i = 0; i < 5; i++)
         {
             CosCard card = new CosCard();
             card.SetValue(1);
             deck.Add(card);
         }
 
-        for (int i = 0; i < 10; i++)
+        for (int i = 0; i < 8; i++)
         {
             AbsolutnaCard card = new AbsolutnaCard();
             card.SetValue(1);
             deck.Add(card);
         }
 
-        for (int i = 0; i < 10; i++)
+        for (int i = 0; i < 3; i++)
         {
             LogCard card = new LogCard();
             card.SetValue(1);
             deck.Add(card);
         }
 
-        for (int i = 0; i < 10; i++)
+        for (int i = 0; i < 3; i++)
         {
             ToThePowerOf2 card = new ToThePowerOf2();
             card.SetValue(1);
@@ -109,6 +109,10 @@ public class GameManager : MonoBehaviour
         for (int i = 0; i < 5; i++) {
             DrawCard();
         }
+    
+                           
+    
+    
     }
 
     public void DrawCard()
