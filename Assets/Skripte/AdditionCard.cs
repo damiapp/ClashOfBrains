@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class AdditionCard : AbstractCard {
 
-    public int value = 1;
+    public double value = 1;
 
     public override void Apply (GameManager manager, Player player) {
         player.Lifepoints += value;
     }
 
-    public void SetValue (int newValue) {
+    public void SetValue (double newValue) {
         value = newValue;
 
         Description = $"+{value}";
+
+        Operation="+";
     }
 }
