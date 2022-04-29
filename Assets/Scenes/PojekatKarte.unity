@@ -1042,8 +1042,8 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 1230371971}
-  - {fileID: 7528028027733838363}
   - {fileID: 7726803008991445641}
+  - {fileID: 7528028027733838363}
   - {fileID: 828845508}
   - {fileID: 1951878662}
   - {fileID: 1463308236}
@@ -1301,6 +1301,8 @@ MonoBehaviour:
   deckSizeText: {fileID: 1049801892}
   dropZonePlayer1: {fileID: 330296542}
   dropZonePlayer2: {fileID: 169328742}
+  dropZonePlayer11: {fileID: 0}
+  dropZonePlayer22: {fileID: 0}
   player1Area: {fileID: 828845507}
   player2Area: {fileID: 1951878661}
   cardPrefab: {fileID: 9194379563098590767, guid: 9fceff8d7dd4bfa47aca4d61b4ef3913, type: 3}
@@ -1456,7 +1458,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8328765600840310767, guid: 242765e9198e2704f834ddfb1ce1ea17, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8328765600840310767, guid: 242765e9198e2704f834ddfb1ce1ea17, type: 3}
       propertyPath: m_AnchorMax.x
@@ -1569,7 +1571,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3482068819969740594, guid: a70c0a33c55238447a103a08c555f642, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3482068819969740594, guid: a70c0a33c55238447a103a08c555f642, type: 3}
       propertyPath: m_AnchorMax.x
