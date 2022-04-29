@@ -34,6 +34,8 @@ public class GameManager : MonoBehaviour
         dropZonePlayer11.BelongingToPlayer = player1;    
         dropZonePlayer22.BelongingToPlayer = player2;
 
+        
+        
         for(int i=0;i<50;i++){
             AdditionCard card=new AdditionCard();
             card.SetValue(Random.Range(1, 22));
