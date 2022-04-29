@@ -59,12 +59,50 @@ public class GameManager : MonoBehaviour
             deck.Add(card);
         }
 
-        for (int i = 0; i < 50; i++)
+        for (int i = 0; i < 10; i++)
         {
             SquareRootCard card = new SquareRootCard();
             card.SetValue(1);
             deck.Add(card);
         }
+
+        for (int i = 0; i < 10; i++)
+        {
+            SinusCard card = new SinusCard ();
+            card.SetValue(1);
+            deck.Add(card);
+        }
+
+        for (int i = 0; i < 10; i++)
+        {
+            CosCard card = new CosCard();
+            card.SetValue(1);
+            deck.Add(card);
+        }
+
+        for (int i = 0; i < 10; i++)
+        {
+            AbsolutnaCard card = new AbsolutnaCard();
+            card.SetValue(1);
+            deck.Add(card);
+        }
+
+        for (int i = 0; i < 10; i++)
+        {
+            LogCard card = new LogCard();
+            card.SetValue(1);
+            deck.Add(card);
+        }
+
+        for (int i = 0; i < 10; i++)
+        {
+            ToThePowerOf2 card = new ToThePowerOf2();
+            card.SetValue(1);
+            deck.Add(card);
+        }
+
+
+
 
         for (int i = 0; i < 5; i++) {
             DrawCard();

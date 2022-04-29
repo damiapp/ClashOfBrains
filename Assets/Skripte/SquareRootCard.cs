@@ -8,7 +8,10 @@ public class SquareRootCard : AbstractCard {
     public double value = 1;
 
     public override void Apply (GameManager manager, Player player) {
-        player.Lifepoints = Math.Sqrt(player.Lifepoints);
+        if (player.Lifepoints < 0) { player.Lifepoints = player.Lifepoints; }
+        else { player.Lifepoints = Math.Sqrt(player.Lifepoints); }
+        
+
     }
 
     public void SetValue (double newValue) {
