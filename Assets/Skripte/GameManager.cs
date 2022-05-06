@@ -9,6 +9,11 @@ public class GameManager : MonoBehaviour
     public Transform[] cardSlots;
     public bool[] availableCardSlots;
     public TMP_Text deckSizeText;
+    public TMP_Text deckSizeText2;
+
+    public int brojacRundi=1;
+    public TMP_Text runda;
+    public TMP_Text runda1;
 
     public Player player1;
     public Player player2;
@@ -29,6 +34,10 @@ public class GameManager : MonoBehaviour
         player1 = new Player("Njutn", player1Area);
         player2 = new Player("Lajbnic", player2Area);
 
+        player1.Lifepoints=20;
+        player2.Lifepoints=15;
+        
+
         dropZonePlayer1.BelongingToPlayer = player1;
         dropZonePlayer2.BelongingToPlayer = player2;
         dropZonePlayer11.BelongingToPlayer = player1;    
@@ -36,6 +45,12 @@ public class GameManager : MonoBehaviour
 
         
         
+         for (int i = 0; i < 5; i++)
+        {
+            Swap card = new Swap();
+            card.SetValue(1);
+            deck.Add(card);
+        }
         for(int i=0;i<50;i++){
             AdditionCard card=new AdditionCard();
             card.SetValue(Random.Range(1, 22));
@@ -64,12 +79,6 @@ public class GameManager : MonoBehaviour
         for (int i = 0; i < 5; i++)
         {
             SquareRootCard card = new SquareRootCard();
-            card.SetValue(1);
-            deck.Add(card);
-        }
-         for (int i = 0; i < 50; i++)
-        {
-            Swap card = new Swap();
             card.SetValue(1);
             deck.Add(card);
         }
@@ -121,6 +130,11 @@ public class GameManager : MonoBehaviour
     
     }
 
+    public void SetRound(){
+        runda.text=$"Runda #{brojacRundi}";
+        runda1.text=$"Runda #{brojacRundi}";
+    }
+
     public void DrawCard()
     {
         if (deck.Count >= 1)
@@ -137,7 +151,9 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        deckSizeText.text = $"Remaining cards: {deck.Count}";
+        deckSizeText.text = $"Ostale karte: {deck.Count}";
+        deckSizeText2.text = $"Ostale karte: {deck.Count}";
+        SetRound();
     }
 
 }

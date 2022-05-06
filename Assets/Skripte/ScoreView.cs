@@ -25,6 +25,6 @@ public class ScoreView : MonoBehaviour
     }
 
     void ShowScore(TextMeshProUGUI Poeni, Player player) {
-        Poeni.text = player.PlayerName + ":" + player.Lifepoints;
+        Poeni.text = player.Lifepoints.ToString("0.##");
     }
 }

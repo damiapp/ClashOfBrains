@@ -9,7 +9,9 @@ public class DeljenjeCrad : AbstractCard
 
     public override void Apply(GameManager manager, Player player)
     {
-        player.Lifepoints /= value;
+        if(value!=0)
+            player.Lifepoints /= value;
+            
     }
 
     public void SetValue(double newValue)

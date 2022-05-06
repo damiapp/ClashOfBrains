@@ -24,7 +24,7 @@ public class DrawCard : MonoBehaviour
         {
             int broj1 = Random.Range(1, 22);
             int broj2 = Random.Range(1, 22);
-
+            
             GameObject playerCardObject = Instantiate(cards[Random.Range(0, cards.Count)], new Vector3(0, 286, 0), Quaternion.identity);
             playerCardObject.transform.SetParent(PlayerArea.transform, false);
 

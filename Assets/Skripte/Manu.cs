@@ -14,5 +14,10 @@ public class Manu : MonoBehaviour
         SceneManager.LoadScene("PojekatKarte");
 
     }
+     public void VratiSeNaMeni()
+    {
+        SceneManager.LoadScene("Menu");
+
+    }
 
 }
