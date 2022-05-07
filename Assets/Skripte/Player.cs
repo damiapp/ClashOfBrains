@@ -6,7 +6,7 @@ public class Player
 {
     public string PlayerName { get; }
     public double Lifepoints { get; set; } = 0;
-    public bool onTurn=false;
+
     private List<AbstractCard> cards = new List<AbstractCard>();
 
     private GameObject PlayerZone;
@@ -24,5 +24,20 @@ public class Player
 
         var playerCardView = cardObject.GetComponent<CardView>();
         playerCardView.SetCard(card);
+    }
+
+    public void DisableCardBoxCollider(){
+        for (int i = 0; i < PlayerZone.transform.childCount; i++)
+        {
+            GameObject child = PlayerZone.transform.GetChild(i).gameObject;
+            child.GetComponent<Collider2D>().enabled = false;
+        }
+    }
+    public void ActiveCardBoxCollider(){
+        for (int i = 0; i < PlayerZone.transform.childCount; i++)
+        {
+            GameObject child = PlayerZone.transform.GetChild(i).gameObject;
+            child.GetComponent<Collider2D>().enabled = true;
+        }
     }
 }

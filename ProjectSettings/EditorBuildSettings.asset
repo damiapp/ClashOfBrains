@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PojekatKarte.unity
     guid: 96532ba26b721594aa8ff46122f5d729
+  - enabled: 1
+    path: Assets/Scenes/PlayAgain.unity
+    guid: 9da400ca774752f449e9d1112dd392a4
   m_configObjects: {}

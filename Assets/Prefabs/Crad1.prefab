@@ -150,7 +150,7 @@ GameObject:
   - component: {fileID: -1494248309732991940}
   - component: {fileID: -2786673733654525011}
   - component: {fileID: 7234304879594906749}
-  - component: {fileID: 4957730262928559647}
+  - component: {fileID: 6223572729025112972}
   m_Layer: 5
   m_Name: Crad1
   m_TagString: Card
@@ -245,6 +245,18 @@ MonoBehaviour:
             m_StringArgument: DrawCard
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 6223572729025112972}
+          m_TargetAssemblyTypeName: UvelicajKartu, Assembly-CSharp
+          m_MethodName: UvelicajMe
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - eventID: 14
     callback:
       m_PersistentCalls:
@@ -259,6 +271,18 @@ MonoBehaviour:
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: DrawCard
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 6223572729025112972}
+          m_TargetAssemblyTypeName: UvelicajKartu, Assembly-CSharp
+          m_MethodName: SmanjiMe
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
 --- !u!114 &6827569773987174660
@@ -286,7 +310,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.5374756, y: -1.074997}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -297,7 +321,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 150, y: 200}
+  m_Size: {x: 148.92505, y: 195.70016}
   m_EdgeRadius: 0
 --- !u!50 &-2786673733654525011
 Rigidbody2D:
@@ -338,7 +362,7 @@ MonoBehaviour:
   puta: {fileID: 21300000, guid: 030bd950324523942b3b889e6f59e1ae, type: 3}
   funkcija: {fileID: 21300000, guid: 4d35b3b7ad477e646b990448a9adeb40, type: 3}
   zamena: {fileID: 21300000, guid: 63f7f7cba4d2507458d48840b08b90ec, type: 3}
---- !u!114 &4957730262928559647
+--- !u!114 &6223572729025112972
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -347,6 +371,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 9194379563098590767}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3072fcf7c00e4e45932c4a0f85b1816, type: 3}
+  m_Script: {fileID: 11500000, guid: d1547e4ba8ee2ee4a914a4f7b6719c9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  card: {fileID: 9194379563098590767}
