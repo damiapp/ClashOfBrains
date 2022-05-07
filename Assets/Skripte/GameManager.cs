@@ -155,6 +155,7 @@ public class GameManager : MonoBehaviour
 
             randCard = deck[Random.Range(0, deck.Count)];
             player2.AddCard(randCard, cardPrefab);
+            player2.DisableCardBoxCollider();
             deck.Remove(randCard);
         }
     }
