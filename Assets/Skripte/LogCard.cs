@@ -10,11 +10,11 @@ public class LogCard : AbstractCard
 
     public override void Apply(GameManager manager, Player player)
     {
-        double tmp=Math.Log(player.Lifepoints);
-        if(tmp==double.NaN)
-            player.Lifepoints+=1000;
+        if(player.Lifepoints<=0)
+            player.Lifepoints=0;
         else
-            player.Lifepoints = tmp;
+            player.Lifepoints=Math.Log(player.Lifepoints);
+        
     }
 
     public void SetValue(double newValue)

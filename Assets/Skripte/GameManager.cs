@@ -141,8 +141,8 @@ public class GameManager : MonoBehaviour
     }
 
     public void SetRound(){
-        runda.text=$"Runda #{brojacRundi}";
-        runda1.text=$"Runda #{brojacRundi}";
+        runda.text=$"Runda #{brojacRundi} / 20";
+        runda1.text=$"Runda #{brojacRundi} / 20";
     }
 
     public void DrawCard()

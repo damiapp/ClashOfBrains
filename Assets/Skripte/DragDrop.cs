@@ -22,10 +22,11 @@ public class DragDrop : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         var dropZoneComponent = collision.gameObject.GetComponent<DropZone>();
-
+        
         if (dropZoneComponent != null) {
             isOverDropZone = true;
             dropZone = dropZoneComponent;
+            
         }
         
     }
